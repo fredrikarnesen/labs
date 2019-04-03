@@ -1,7 +1,8 @@
 $user = "faradmin"
 $domain = "contoso.com"
 $kv = 'kv-weu-fartest'
-$password = (Get-AzKeyVaultSecret -vaultName $kv -name "DomainAdmin").SecretValueText
+$password = 'Sommeren2019?'
+# $password = (Get-AzKeyVaultSecret -vaultName $kv -name "DomainAdmin").SecretValueText
 $smPassword = (ConvertTo-SecureString $password -AsPlainText -Force)
 $cred = new-object -typename System.Management.Automation.PSCredential `
          -argumentlist $user, $smPassword
@@ -22,4 +23,4 @@ Install-ADDSDomainController -DomainName $domain `
                              -SiteName "Default-First-Site-Name" `
                              -SysvolPath "E:\Windows\SYSVOL" `
                              -Force:$true `
-                             -SafeModeAdministratorPassword $smPassword 
+                             -SafeModeAdministratorPassword $smPassword
