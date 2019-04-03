@@ -15,11 +15,11 @@ Install-ADDSDomainController -DomainName $domain `
                              -CreateDnsDelegation:$false `
                              -Credential $cred `
                              -CriticalReplicationOnly:$false `
-                             -DatabasePath "F:\Windows\NTDS" `
+                             -DatabasePath "E:\Windows\NTDS" `
                              -InstallDns:$true `
-                             -LogPath "F:\Windows\NTDS" `
+                             -LogPath "E:\Windows\NTDS" `
                              -NoRebootOnCompletion:$false `
                              -SiteName "Default-First-Site-Name" `
-                             -SysvolPath "F:\Windows\SYSVOL" `
+                             -SysvolPath "E:\Windows\SYSVOL" `
                              -Force:$true `
                              -SafeModeAdministratorPassword $smPassword 
